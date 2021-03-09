@@ -16,7 +16,7 @@ RESULTS_ROOT="${ROOT}/results"
 mkdir -p ${RESULTS_ROOT}
 
 ### NAME YOUR EXPERIMENT HERE ##
-EXP_NAME="lexical_attention_dropout"
+EXP_NAME="transformer_tiny1"
 ################################
 
 ## Local variables for current experiment
@@ -30,9 +30,9 @@ mkdir -p ${EXP_ROOT}
 python train.py --save-dir "${EXP_ROOT}" \
                 --log-file "${EXP_ROOT}/log.out"  \
                 --data "${DATA_DIR}" \
-                --encoder-num-layers 2 \
-                --decoder-num-layers 3 \
-                --decoder-use-lexical-model True\
+                --encoder-layers 2 \
+                --decoder-layers 3 \
+                --train-on-tiny --arch transformer\
                 ### ADDITIONAL ARGUMENTS HERE ###
 
 ## Prediction step
